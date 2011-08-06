@@ -1,0 +1,23 @@
+[user]
+	name = Anjali Shenoy
+	email = anjshenoy@gmail.com
+[core]
+	editor = vi
+[alias]
+	st = status
+  di = diff
+  co = checkout
+  br = branch
+  ci = commit
+  l  = log
+  ss = stash
+  fix = commit --amend -C HEAD
+[color]
+	diff = auto
+	log = auto
+	stash = auto
+	branch = auto
+	status = auto
+
+[svn]
+  rmdir = true
