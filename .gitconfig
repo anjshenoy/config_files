@@ -5,7 +5,7 @@
 	editor = vi
 [alias]
 	st = status
-  di = diff
+  di = diff --color-words
   co = checkout
   br = branch
   ci = commit
