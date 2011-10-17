@@ -1,4 +1,7 @@
 set -o vi
+alias cap="ssh capuser@anjali.posterdev.com"
+alias a11="ssh -p 52222 anjali@admin11.posterous.com"
+
 alias c="clear"
 alias ll="ls -la --color"
 alias ld="ls -la --color | grep ^d" # list dirs only
@@ -51,6 +54,8 @@ alias grh="git reset HEAD"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 
+source ~/.bashrc
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
