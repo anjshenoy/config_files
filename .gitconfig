@@ -3,6 +3,8 @@
 	email = anjshenoy@gmail.com
 [core]
 	editor = vi
+  autocrlf =  input
+  safecrlf = true
 [alias]
 	st = status
   di = diff
@@ -12,6 +14,7 @@
   l  = log
   ss = stash
   fix = commit --amend -C HEAD
+
 [color]
 	diff = auto
 	log = auto
