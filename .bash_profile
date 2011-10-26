@@ -2,7 +2,7 @@
 #alias a11="ssh -p 52222 anjali@admin11.posterous.com"
 
 set -o vi
-alias c="clear"
+alias cl="clear"
 alias ls="ls -G"
 alias ll="ls -la"
 alias ld="ls -la | grep ^d" # list dirs only
@@ -19,9 +19,9 @@ alias v="vim ."
 #alias vimt="cdt && vim ."
 
 # asha stuff
-alias cd_r2="cd ~/workspace/ruby/rajdhani2"
-alias vimr="cd_r2 && vim ."
-alias cd_log="raj2 && cd log"
+alias raj="cd ~/workspace/ruby/rajdhani2"
+alias vimr="raj && vim ."
+alias log="raj && cd log"
 
 #unicorn
 alias uwatch="watch -n 0.2 \"ps -ef | grep unicorn | grep -v grep\""
@@ -32,10 +32,10 @@ alias urestart="ustop && sleep 5 && ustart"
 
 #logs
 #alias dev_log="cd_log; ls -t devcloud* | head -1"
-alias dev_log="cd_log; ls -t development.log"
-alias clear_logs="cd_log && rake log:clear && echo \"\" > `dev_log`"
-alias tail_dev="cd_log && tail -100f `dev_log`"
-alias tail_test="cd_log && tail -100f test.log"
+alias dev_log="log; ls -t development.log"
+alias clear_logs="log && rake log:clear && echo \"\" > `dev_log`"
+alias tail_dev="log && tail -100f `dev_log`"
+alias tail_test="log && tail -100f test.log"
 alias crt="clear_logs && urestart && sleep 10 && tail_dev"
 
 #git
@@ -70,18 +70,9 @@ RED="\[\e[0;31m\]"
 BLACK="\[\e[0;39m\]"
 
 parse_git_branch(){
-  BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-  if [ -n "$BRANCH" ]; then
-    echo $BRANCH
-  else
-    echo ""
-  fi
+  git branch 2>/dev/null| sed -n '/^\*/s/^\* //p'
 }
-export PS1="$CYAN\u:\w $DARK_GREY[\D{%H:%M}]$RED $(parse_git_branch)$CYAN ➤ $BLACK"
-
-# for enabling color mode on os x
-#export CLICOLOR=1
-#export LSCOLORS=ExFxCxDxBxegedabagacad
+export PS1="$CYAN\u:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
 
 source ~/.bashrc
 
