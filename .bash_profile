@@ -1,27 +1,8 @@
-#alias cap="ssh capuser@anjali.posterdev.com"
-#alias a11="ssh -p 52222 anjali@admin11.posterous.com"
-
 set -o vi
 alias cl="clear"
-alias ls="ls -G"
-alias ll="ls -la"
-alias ld="ls -la | grep ^d" # list dirs only
-alias lf="ls -la | grep -v ^d" #list files only
 alias .profile=". ~/.bash_profile"
 alias v_profile="vi ~/.bash_profile"
 alias v="vim ."
-
-#---- POSTEROUS STUFF
-#alias cd_post="cd ~/git/posterous"
-#alias cdt="cd ~/git/tattle"
-#alias cd_log="cd_post && cd log"
-#alias vimp="cd_post && vim ."
-#alias vimt="cdt && vim ."
-
-# asha stuff
-alias raj="cd ~/workspace/ruby/rajdhani2"
-alias vimr="raj && vim ."
-alias log="raj && cd log"
 
 #unicorn
 alias uwatch="watch -n 0.2 \"ps -ef | grep unicorn | grep -v grep\""
@@ -29,14 +10,6 @@ alias ustop="/etc/init.d/unicorn stop"
 alias ustart="/etc/init.d/unicorn start"
 #alias urestart="/etc/init.d/unicorn restart" kills only child processes but not the parent.
 alias urestart="ustop && sleep 5 && ustart"
-
-#logs
-#alias dev_log="cd_log; ls -t devcloud* | head -1"
-alias dev_log="log; ls -t development.log"
-alias clear_logs="log && rake log:clear && echo \"\" > `dev_log`"
-alias tail_dev="log && tail -100f `dev_log`"
-alias tail_test="log && tail -100f test.log"
-alias crt="clear_logs && urestart && sleep 10 && tail_dev"
 
 #git
 alias gst="git st"
