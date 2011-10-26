@@ -5,6 +5,10 @@
 --smart-case
 # follow symlinks
 --follow
+#always color, even if piping to another program
+--color
+# Use "less -r" as my pager
+--page=less -r
 
 --type-add=ruby=.haml,.builder
 --type-add=css=.sass
