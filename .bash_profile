@@ -38,7 +38,7 @@ alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 
 CYAN="\[\e[0;36m\]"
-DARK_GREY="\[\e[1;30m\]"
+DARK_GREY="\[\e[0;30m\]"
 RED="\[\e[0;31m\]"
 BLACK="\[\e[0;39m\]"
 
