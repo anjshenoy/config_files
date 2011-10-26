@@ -1,1 +1,4 @@
 color blacksea
+set nu
+set wrap
+imap p* puts "*"*100
