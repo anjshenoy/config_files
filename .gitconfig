@@ -11,9 +11,14 @@
   co = checkout
   br = branch
   ci = commit
+  cia = commit --amend
   l  = log
+  sl = shortlog
+  slr = shortlog --reverse
   ss = stash
   fix = commit --amend -C HEAD
+  spush = stash save
+  spop = stash pop
 
 [color]
 	diff = auto
@@ -21,6 +26,3 @@
 	stash = auto
 	branch = auto
 	status = auto
-
-[svn]
-  rmdir = true
