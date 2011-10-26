@@ -22,7 +22,6 @@
 --ignore-dir=gems
 --ignore-dir=plugins
 --ignore-dir=rails
--–ignore-dir=migrations
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=cache
