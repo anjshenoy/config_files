@@ -48,7 +48,7 @@ BLACK="\[\e[0;39m\]"
 parse_git_branch(){
   git branch 2>/dev/null| sed -n '/^\*/s/^\* //p'
 }
-export PS1="$CYAN\u:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
+export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
 
 source ~/.bashrc
 
