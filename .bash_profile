@@ -36,6 +36,7 @@ alias grh="git reset HEAD"
 alias grb-im="git rebase -i master"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
+alias gcofrbm_sb = "gcom && gfetch && gplom && gco"
 
 CYAN="\[\e[0;36m\]"
 DARK_GREY="\[\e[0;30m\]"
