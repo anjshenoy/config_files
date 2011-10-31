@@ -1,4 +1,6 @@
-color ir_black
+set t_Co=256
+set clipboard=unnamed
+colorscheme molokai
 set nu
 set wrap
 imap p* puts "*"*100

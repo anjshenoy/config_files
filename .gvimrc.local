@@ -1,4 +1,5 @@
-color blacksea
+set t_Co=256
+colorscheme molokai
 set nu
 set wrap
 imap p* puts "*"*100
