@@ -41,7 +41,7 @@ alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 
 #rails
-alias rlc = "rake log:clear"
+alias rlc="rake log:clear"
 
 
 CYAN="\[\e[0;36m\]"
