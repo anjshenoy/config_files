@@ -4,3 +4,8 @@ colorscheme molokai
 set nu
 set wrap
 imap p* puts "*"*100
+imap r* Rails.logger.info "*"*100
+imap Rlog Rails.logger.info "
+imap Sysout System.out.println("
+:command W w
+:command Q q
