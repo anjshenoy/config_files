@@ -50,7 +50,7 @@ alias ld="ls -la | grep ^d" # list dirs only
 alias lf="ls -la | grep -v ^d" #list files only
 
 alias cdchat="cd ~/chat_server"
-alias cdh= "cd ~"
+alias cdh="cd ~"
 
 
 CYAN="\[\e[0;36m\]"
