@@ -43,6 +43,15 @@ alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 #rails
 alias rlc="rake log:clear"
 
+#other
+alias ls="ls -G"
+alias ll="ls -la"
+alias ld="ls -la | grep ^d" # list dirs only
+alias lf="ls -la | grep -v ^d" #list files only
+
+alias cdchat="cd ~/chat_server"
+alias cdh= "cd ~"
+
 
 CYAN="\[\e[0;36m\]"
 DARK_GREY="\[\e[0;30m\]"
