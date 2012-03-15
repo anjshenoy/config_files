@@ -1,3 +1,7 @@
+PATH=$PATH:~/bin/mvim
+export EDITOR=mvim
+export BUNDLER_EDITOR=mvim
+
 set -o vi
 alias cl="clear"
 alias .profile=". ~/.bash_profile"
