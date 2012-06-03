@@ -2,9 +2,10 @@
 	name = Anjali Shenoy
 	email = anjshenoy@gmail.com
 [core]
-	editor = vi
-  autocrlf =  input
-  safecrlf = true
+	editor = mvim
+	autocrlf = false
+	safecrlf = true
+	excludesfile = ~/.gitignore_global
 [alias]
 	st = status
   di = diff

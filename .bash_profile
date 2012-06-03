@@ -1,6 +1,7 @@
 PATH=$PATH:~/bin/mvim
 export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
+export NODE_PATH=/usr/local/lib/node_modules
 
 set -o vi
 alias cl="clear"
@@ -16,6 +17,7 @@ alias ustart="/etc/init.d/unicorn start"
 alias urestart="ustop && sleep 5 && ustart"
 
 #git
+alias ginit="git init"
 alias gst="git st"
 alias gbr="git br"
 alias gdi="git di"
@@ -40,12 +42,30 @@ alias spp="git stash && git pull && git stash pop"
 alias gspop="git stash pop"
 alias gspush="git spush"
 alias grh="git reset HEAD"
+alias grm="git rm"
 alias grb-im="git rebase -i master"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 
 #rails
-alias rlc="rake log:clear"
+alias rlc="be rake log:clear"
+alias ts="thin start"
+alias rs="rails server"
+alias rg="rails generate"
+alias rd="rails destroy"
+alias rc="be rails console"
+alias rgm="rg model"
+alias rgc="rg controller"
+alias b="bundle"
+alias be="b exec"
+alias bc="b check"
+alias bi="b install"
+alias bu="b update"
+alias bo="b open"
+alias bs='b show'
+
+#cap tasks
+alias deploystage="cap staging && cap deploy"
 
 #other
 alias ls="ls -G"
@@ -53,9 +73,13 @@ alias ll="ls -la"
 alias ld="ls -la | grep ^d" # list dirs only
 alias lf="ls -la | grep -v ^d" #list files only
 
+#dirs
 alias cdchat="cd ~/chat_server"
-alias cdh="cd ~"
+alias ~="cd ~"
 
+function cdgem(){
+ cd `bs $1`
+}
 
 CYAN="\[\e[0;36m\]"
 DARK_GREY="\[\e[0;30m\]"
