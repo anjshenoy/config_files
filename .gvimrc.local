@@ -5,11 +5,9 @@ set nu
 set wrap
 imap p* puts "*"*100
 imap ps puts "
-imap r* logger.debug "*"*100
-imap rlog logger.debug "
-imap Rlog logger.debug "
-imap l* logger.debug "*"*100
-imap log logger.debug "
+imap r* Rails.logger.debug "*"*100
+imap rlog Rails.logger.debug "
+imap Rlog Rails.logger.debug "
 imap Sysout System.out.println("
 imap <%% <% %>
 imap <% e <% end %>
