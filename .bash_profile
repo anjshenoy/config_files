@@ -30,19 +30,19 @@ alias gcom="git co master"
 alias gco="git co"
 alias gshow="git show"
 alias gci="git ci"
-alias gfetch="git fetch"
+alias gf="git fetch"
 alias gfplom="gfetch && gplom"
-alias gpo_r="git pull --rebase origin"
 alias gplo="git pull origin"
-alias gpshom="git push origin master"
 alias gplom="git pull origin master"
-alias gcomfrb_sb="gcom && gfetch && gplom && gco"
-alias gfplom="gfetch && gplom"
+alias gplrom="git pull --rebase origin master"
+alias gcomfrb_sb="gcom && && gfplom && gco"
+alias gpshom="git push origin master"
 alias spp="git stash && git pull && git stash pop"
 alias gspop="git stash pop"
 alias gspush="git spush"
 alias grh="git reset HEAD"
 alias grm="git rm"
+alias gmv="git mv"
 alias grb-im="git rebase -i master"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
@@ -85,11 +85,17 @@ CYAN="\[\e[0;36m\]"
 DARK_GREY="\[\e[0;30m\]"
 RED="\[\e[0;31m\]"
 BLACK="\[\e[0;39m\]"
+WHITE="\[\e[0;37m\]"
+GREEN="\[\e[0;32m\]"
 
 parse_git_branch(){
   git branch 2>/dev/null| sed -n '/^\*/s/^\* //p'
 }
-export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
+#white background
+#export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
+
+#black background
+export PS1="$CYAN\u@\h:\w $RED[\D{%H:%M}]$YELLOW \$(parse_git_branch)$CYAN ➤ $WHITE"
 
 source ~/.bashrc
 
