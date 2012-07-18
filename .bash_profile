@@ -18,6 +18,7 @@ alias urestart="ustop && sleep 5 && ustart"
 
 #git
 alias ginit="git init"
+alias gcl="git clone"
 alias gst="git st"
 alias gbr="git br"
 alias gdi="git di"
@@ -31,7 +32,7 @@ alias gco="git co"
 alias gshow="git show"
 alias gci="git ci"
 alias gf="git fetch"
-alias gfplom="gfetch && gplom"
+alias gfplom="gf && gplom"
 alias gplo="git pull origin"
 alias gplom="git pull origin master"
 alias gplrom="git pull --rebase origin master"
@@ -73,6 +74,12 @@ alias ll="ls -la"
 alias ld="ls -la | grep ^d" # list dirs only
 alias lf="ls -la | grep -v ^d" #list files only
 
+#grep
+alias gp="grep -Rn --color"
+function gpstd(){
+  gp $1 app config lib test
+}
+
 #dirs
 alias cdchat="cd ~/chat_server"
 alias ~="cd ~"
@@ -95,7 +102,7 @@ parse_git_branch(){
 #export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
 
 #black background
-export PS1="$CYAN\u@\h:\w $RED[\D{%H:%M}]$YELLOW \$(parse_git_branch)$CYAN ➤ $WHITE"
+export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
 
 source ~/.bashrc
 
