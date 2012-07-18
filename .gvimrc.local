@@ -5,10 +5,16 @@ set nu
 set wrap
 imap p* puts "*"*100
 imap ps puts "
+imap r* logger.debug "*"*100
+imap rlog logger.debug "
+imap Rlog logger.debug "
 imap l* logger.debug "*"*100
-imap log logger.debug "
 imap log logger.debug "
 imap Sysout System.out.println("
 imap <%% <% %>
 imap <% e <% end %>
 imap <%= <%= %>
+
+if has("gui_running")
+   set guioptions=-t
+endif
