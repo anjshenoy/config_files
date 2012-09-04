@@ -1,8 +1,8 @@
 [user]
 	name = Anjali Shenoy
-	email = anjshenoy@gmail.com
+	email = ashenoy@yammer-inc.com
 [core]
-	editor = mvim
+	editor = vim
 	autocrlf = false
 	safecrlf = true
 	excludesfile = ~/.gitignore_global
@@ -20,6 +20,7 @@
   fix = commit --amend -C HEAD
   spush = stash save
   spop = stash pop
+	ahead = log origin/master..HEAD --oneline
 
 [color]
 	diff = auto

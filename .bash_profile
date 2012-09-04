@@ -1,4 +1,4 @@
-PATH=$PATH:~/bin/mvim
+PATH=$PATH:~/bin/mvim:~/usr/local/bin
 export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
 export NODE_PATH=/usr/local/lib/node_modules
@@ -24,7 +24,7 @@ alias gbr="git br"
 alias gdi="git di"
 alias gadd="git add"
 alias gl="git l"
-alias gl="git l --author=anjshenoy@gmail.com"
+alias gltop='gl -n 1'
 alias gsl="git shortlog"
 alias gslme="git shortlog --author=anjshenoy@gmail.com"
 alias gcom="git co master"
@@ -38,15 +38,21 @@ alias gplom="git pull origin master"
 alias gplrom="git pull --rebase origin master"
 alias gcomfrb_sb="gcom && && gfplom && gco"
 alias gpshom="git push origin master"
+alias grpshom="gplrom && gpshom"
 alias spp="git stash && git pull && git stash pop"
 alias gspop="git stash pop"
+alias gslist="git stash list"
+alias gss="git stash save"
 alias gspush="git spush"
 alias grh="git reset HEAD"
+alias gcp="git cherry-pick"
 alias grm="git rm"
 alias gmv="git mv"
 alias grb-im="git rebase -i master"
+alias grb="git rebase"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
+alias gahead="git ahead"
 
 #rails
 alias rlc="be rake log:clear"
