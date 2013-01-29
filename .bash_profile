@@ -7,7 +7,7 @@ set -o vi
 alias cl="clear"
 alias .profile=". ~/.bash_profile"
 alias v_profile="vi ~/.bash_profile"
-alias v="vim ."
+alias tagit="ctags -R --exclude=public ."
 
 #unicorn
 alias uwatch="watch -n 0.2 \"ps -ef | grep unicorn | grep -v grep\""
@@ -18,7 +18,8 @@ alias urestart="ustop && sleep 5 && ustart"
 
 #git
 alias ginit="git init"
-alias gcl="git clone"
+alias gcl="git cl"
+alias gclyam="git cl git@github.com:yammer/$1.git"
 alias gst="git st"
 alias gbr="git br"
 alias gdi="git di"
@@ -36,6 +37,7 @@ alias gfplom="gf && gplom"
 alias gplo="git pull origin"
 alias gplom="git pull origin master"
 alias gplrom="git pull --rebase origin master"
+alias gplro="git pull --rebase origin"
 alias gcomfrb_sb="gcom && && gfplom && gco"
 alias gpshom="git push origin master"
 alias grpshom="gplrom && gpshom"
@@ -53,6 +55,8 @@ alias grb="git rebase"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 alias gahead="git ahead"
+alias grt="git revert"
+alias gshowtop="gl -p -1"
 
 #rails
 alias rlc="be rake log:clear"
@@ -83,7 +87,7 @@ alias lf="ls -la | grep -v ^d" #list files only
 #grep
 alias gp="grep -Rn --color"
 function gpstd(){
-  gp $1 app config lib test
+  gp "${1}" app config lib test vendor
 }
 
 #dirs
@@ -114,3 +118,6 @@ source ~/.bashrc
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

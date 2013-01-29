@@ -21,6 +21,7 @@
   spush = stash save
   spop = stash pop
 	ahead = log origin/master..HEAD --oneline
+  cl = clone
 
 [color]
 	diff = auto
