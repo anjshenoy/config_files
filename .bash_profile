@@ -1,4 +1,4 @@
-PATH=$PATH:~/bin/mvim:~/usr/local/bin
+PATH=/usr/local/bin:$PATH:~/bin/mvim:~/usr/local/bin
 export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
 export NODE_PATH=/usr/local/lib/node_modules
@@ -6,7 +6,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 set -o vi
 alias cl="clear"
 alias .profile=". ~/.bash_profile"
-alias v_profile="vi ~/.bash_profile"
+alias vprofile="vi ~/.bash_profile"
 alias tagit="ctags -R --exclude=public ."
 
 #unicorn
@@ -19,7 +19,6 @@ alias urestart="ustop && sleep 5 && ustart"
 #git
 alias ginit="git init"
 alias gcl="git cl"
-alias gclyam="git cl git@github.com:yammer/$1.git"
 alias gst="git st"
 alias gbr="git br"
 alias gdi="git di"
@@ -35,10 +34,12 @@ alias gci="git ci"
 alias gf="git fetch"
 alias gfplom="gf && gplom"
 alias gplo="git pull origin"
+alias gpl="git pull"
 alias gplom="git pull origin master"
 alias gplrom="git pull --rebase origin master"
 alias gplro="git pull --rebase origin"
-alias gcomfrb_sb="gcom && && gfplom && gco"
+alias gpshfo="git push -f origin"
+alias gcomfrb_sb="gcom && gfplom && gco"
 alias gpshom="git push origin master"
 alias grpshom="gplrom && gpshom"
 alias spp="git stash && git pull && git stash pop"
@@ -52,11 +53,13 @@ alias grm="git rm"
 alias gmv="git mv"
 alias grb-im="git rebase -i master"
 alias grb="git rebase"
+alias grbm="grb master"
 alias top_log="git log | head -1"
 alias show_top="top_log | awk \'{print $2}\' | xargs git show"
 alias gahead="git ahead"
 alias grt="git revert"
 alias gshowtop="gl -p -1"
+
 
 #rails
 alias rlc="be rake log:clear"
@@ -74,6 +77,7 @@ alias bi="b install"
 alias bu="b update"
 alias bo="b open"
 alias bs='b show'
+alias bshow='b show'
 
 #cap tasks
 alias deploystage="cap staging && cap deploy"
@@ -84,10 +88,14 @@ alias ll="ls -la"
 alias ld="ls -la | grep ^d" # list dirs only
 alias lf="ls -la | grep -v ^d" #list files only
 
+#vagrant
+alias vbox='vagrant box'
+alias vup='vagrant up --provider=aws'
+
 #grep
 alias gp="grep -Rn --color"
 function gpstd(){
-  gp "${1}" app config lib test vendor
+  gp "${1}" app config lib script test vendor
 }
 
 #dirs
@@ -111,13 +119,26 @@ parse_git_branch(){
 #white background
 #export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
 
+#TODO: this does not work. Yet
+function gcle(){
+  gcl "git@github.int.yammer.com:yammer/$1.git"
+}
+
+
 #black background
 export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
+
+#export JAVA_HOME=/usr
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export EC2_HOME=~/ec2-api-tools-1.6.7.2
+export HEROKU_HOME=/usr/local/heroku
+
+### Added by the Heroku Toolbelt
+export PATH="$HEROKU_HOME/bin:$EC2_HOME/bin:$PATH"
 
 source ~/.bashrc
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+addsshagent
