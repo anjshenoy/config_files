@@ -29,3 +29,5 @@
 	stash = auto
 	branch = auto
 	status = auto
+[credential]
+	helper = osxkeychain
