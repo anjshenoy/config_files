@@ -11,5 +11,3 @@ imap Rlog logger.debug "
 imap Sysout System.out.println("
 imap <%% <% %>
 imap <%= <%= %>
-:command W w
-:command Q q
