@@ -31,6 +31,7 @@ alias gcom="git co master"
 alias gco="git co"
 alias gshow="git show"
 alias gci="git ci"
+alias gcim="git ci --amend"
 alias gf="git fetch"
 alias gfplom="gf && gplom"
 alias gplo="git pull origin"
@@ -140,5 +141,3 @@ source ~/.bashrc
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-addsshagent
