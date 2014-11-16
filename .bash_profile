@@ -131,6 +131,4 @@ export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $W
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export EC2_HOME=~/ec2-api-tools-1.6.7.2
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.bashrc
