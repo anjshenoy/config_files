@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-PATH=/usr/local/bin:$PATH:~/bin/mvim:~/usr/local/bin
-=======
 PATH=/usr/local/bin:$PATH:~/bin/mvim
->>>>>>> removed heroku settings, adding vim settings
 export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
-export NODE_PATH=/usr/local/lib/node_modules
 
 set -o vi
 alias cl="clear"
@@ -133,12 +128,8 @@ function gcle(){
 export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
 
 #export JAVA_HOME=/usr
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export EC2_HOME=~/ec2-api-tools-1.6.7.2
-export HEROKU_HOME=/usr/local/heroku
-
-### Added by the Heroku Toolbelt
-export PATH="$HEROKU_HOME/bin:$EC2_HOME/bin:$PATH"
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
