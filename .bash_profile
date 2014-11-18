@@ -1,4 +1,3 @@
-PATH=/usr/local/bin:$PATH:~/bin/mvim
 export EDITOR=mvim
 export BUNDLER_EDITOR=mvim
 
@@ -40,7 +39,8 @@ alias gplrom="git pull --rebase origin master"
 alias gplro="git pull --rebase origin"
 alias gpshfo="git push -f origin"
 alias gcomfrb_sb="gcom && gfplom && gco"
-alias gpshom="git push origin master"
+alias gpsho="git push origin"
+alias gpshom="gpsho master"
 alias grpshom="gplrom && gpshom"
 alias spp="git stash && git pull && git stash pop"
 alias gspop="git stash pop"
@@ -60,6 +60,9 @@ alias gahead="git ahead"
 alias grt="git revert"
 alias gshowtop="gl -p -1"
 
+function gpshb(){
+  gpsho "${1}"
+}
 
 #rails
 alias rlc="be rake log:clear"
@@ -119,7 +122,6 @@ parse_git_branch(){
 #white background
 #export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
 
-#TODO: this does not work. Yet
 function gcle(){
   gcl "git@github.int.yammer.com:yammer/$1.git"
 }
@@ -127,8 +129,9 @@ function gcle(){
 #black background
 export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
 
-#export JAVA_HOME=/usr
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export EC2_HOME=~/ec2-api-tools-1.6.7.2
+export PATH=/usr/local/bin:~/bin/mvim:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+source ~/.bashrc
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
