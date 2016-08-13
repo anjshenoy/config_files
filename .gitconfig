@@ -1,13 +1,13 @@
 [user]
 	name = Anjali Shenoy
-	email = ashenoy@yammer-inc.com
+	email = anjshenoy@gmail.com
 [core]
 	editor = vim
 	autocrlf = false
 	safecrlf = true
 	excludesfile = ~/.gitignore_global
 [alias]
-	st = status
+  st = status
   di = diff
   co = checkout
   br = branch
@@ -20,7 +20,7 @@
   fix = commit --amend -C HEAD
   spush = stash save
   spop = stash pop
-	ahead = log origin/master..HEAD --oneline
+  ahead = log origin/master..HEAD --oneline
   cl = clone
 
 [color]
