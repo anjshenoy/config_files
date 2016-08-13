@@ -91,19 +91,11 @@ alias ll="ls -la"
 alias ld="ls -la | grep ^d" # list dirs only
 alias lf="ls -la | grep -v ^d" #list files only
 
-#vagrant
-alias vbox='vagrant box'
-alias vup='vagrant up --provider=aws'
-
 #grep
 alias gp="grep -Rn --color"
 function gpstd(){
   gp "${1}" app config lib script test vendor
 }
-
-#dirs
-alias cdchat="cd ~/chat_server"
-alias ~="cd ~"
 
 function cdgem(){
  cd `bs $1`
@@ -129,9 +121,12 @@ function gcle(){
 #black background
 export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=/usr/local/bin:~/bin/mvim:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
-source ~/.bashrc
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
