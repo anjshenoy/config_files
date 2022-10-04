@@ -1,6 +1,6 @@
 alias cl="clear"
-alias .profile=". ~/.bash_profile"
-alias vprofile="vi ~/.bash_profile"
+alias .profile="source ~/config_files/.bash_profile"
+alias vprofile="vi ~/config_files/.bash_profile"
 alias tagit="ctags -R --exclude=public ."
 
 #git
@@ -87,18 +87,12 @@ function cdgem(){
  cd `bs $1`
 }
 
-CYAN="\[\e[0;36m\]"
-DARK_GREY="\[\e[0;30m\]"
-RED="\[\e[0;31m\]"
-BLACK="\[\e[0;39m\]"
-WHITE="\[\e[0;37m\]"
-GREEN="\[\e[0;32m\]"
-
 function gcle(){
   gcl "git@github.int.yammer.com:yammer/$1.git"
 }
 
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
+export PATH="$HOME/.rbenv/bin:$PATH"
 
+eval "$(rbenv init - zsh)"
+rbenv global 3.1.2
+rbenv version
