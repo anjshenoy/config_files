@@ -1,18 +1,7 @@
-export EDITOR=mvim
-export BUNDLER_EDITOR=mvim
-
-set -o vi
 alias cl="clear"
 alias .profile=". ~/.bash_profile"
 alias vprofile="vi ~/.bash_profile"
 alias tagit="ctags -R --exclude=public ."
-
-#unicorn
-alias uwatch="watch -n 0.2 \"ps -ef | grep unicorn | grep -v grep\""
-alias ustop="/etc/init.d/unicorn stop"
-alias ustart="/etc/init.d/unicorn start"
-#alias urestart="/etc/init.d/unicorn restart" kills only child processes but not the parent.
-alias urestart="ustop && sleep 5 && ustart"
 
 #git
 alias ginit="git init"
@@ -82,9 +71,6 @@ alias bo="b open"
 alias bs='b show'
 alias bshow='b show'
 
-#cap tasks
-alias deploystage="cap staging && cap deploy"
-
 #other
 alias ls="ls -G"
 alias ll="ls -la"
@@ -108,23 +94,9 @@ BLACK="\[\e[0;39m\]"
 WHITE="\[\e[0;37m\]"
 GREEN="\[\e[0;32m\]"
 
-parse_git_branch(){
-  git branch 2>/dev/null| sed -n '/^\*/s/^\* //p'
-}
-#white background
-#export PS1="$CYAN\u@\h:\w $DARK_GREY[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $BLACK"
-
 function gcle(){
   gcl "git@github.int.yammer.com:yammer/$1.git"
 }
-
-#black background
-export PS1="$CYAN\u@\h:\w $GREEN[\D{%H:%M}]$RED \$(parse_git_branch)$CYAN ➤ $WHITE"
-
-export PATH=/usr/local/bin:~/bin/mvim:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="$PATH:$HOME/.rvm/bin"
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
